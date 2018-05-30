@@ -9,8 +9,8 @@ class AdoptersController < ApplicationController
   end
 
   def create
+    @adopter = Adopter.new(adopter_params)
     byebug
-    @adopter = Adopter.new(set_adopter)
     if @adopter.save
       redirect_to @adopter
     else
@@ -42,7 +42,7 @@ class AdoptersController < ApplicationController
   end
 
   def adopter_params
-    params.require(:adopter).permit(:name, :email, :password, :password_confirmation, :age, :description, :location, :min_age_pref, :max_age_pref, :breed_pref, :temperament_pref, :num_of_cats)
+    params.require(:adopter).permit(:name, :email, :password, :password_confirmation, :age, :description, :location, :min_age_pref, :max_age_pref, :breed_pref, :temperament_pref, :num_of_cats, :image_url)
   end
 
 end

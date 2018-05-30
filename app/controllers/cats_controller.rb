@@ -8,6 +8,15 @@ class CatsController < ApplicationController
   def show
   end
 
+  def create
+    @cat = Cat.new(cat_params)
+    if @cat.save
+      redirect_to @cat
+    else
+      render 'new'
+    end
+  end
+
   def edit
   end
 
@@ -32,6 +41,6 @@ class CatsController < ApplicationController
   end
 
   def cat_params
-    params.require(:cat).permit(:name, :email, :password, :password_confirmation, :age, :description, :location, :breed, :temperament, :sociability)
+    params.require(:cat).permit(:name, :email, :password, :password_confirmation, :age, :description, :location, :breed, :temperament, :sociability, :image_url)
   end
 end
