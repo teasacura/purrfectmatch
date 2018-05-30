@@ -1,3 +1,8 @@
 <h1><%= @adopter.name %></h1>
-<p><%= @adopter.age %></p>
-<p><%= @adopter.image_url %></p>
+Age: <p><%= @adopter.age %></p>
+<p><%= image_tag(@adopter.image_url) %></p>
+
+
+
+<br>
+<%= link_to "Edit Profile", edit_adopter_path(@adopter) %>

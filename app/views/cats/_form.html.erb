@@ -1,4 +1,12 @@
 <%= form_for @cat do |f| %>
+<ul>
+  <% if @cat.errors.any? %>
+    <% @cat.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  <% end %>
+</ul>
+
   <%= f.label :name %><br>
   <%= f.text_field :name %><br>
   <%= f.label :email %><br>
@@ -7,10 +15,17 @@
   <%= f.password_field :password %><br>
   <%= f.label :password_confirmation %><br>
   <%= f.password_field :password_confirmation %><br>
+<h1>Pet Info</h1>
+  <%= f.label :breed %><br>
+  <%= f.text_field :breed %><br>
   <%= f.label :age %><br>
   <%= f.number_field :age %><br>
   <%= f.label :description %><br>
   <%= f.text_area :description %><br>
+  <%= f.label :temperament %><br>
+  <%= f.text_field :temperament %><br>
+  <%= f.label :sociability %><br>
+  <%= f.text_field :sociability %><br>
   <%= f.label :location %><br>
   <%= f.text_field :location %><br>
   <%= f.label :image_url %><br>
