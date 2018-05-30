@@ -29,8 +29,9 @@ ETC.
 #New/Edit Page
 Form
 
-#Choose Route
-:type
+#Account_type Page
+DONE!
+
 
 #Login
 Form
