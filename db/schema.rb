@@ -12,6 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2018_05_30_142758) do
 
+  create_table "admins", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+  end
+
   create_table "adopter_cats", force: :cascade do |t|
     t.integer "adopter_id"
     t.integer "cat_id"
@@ -19,13 +25,7 @@ ActiveRecord::Schema.define(version: 2018_05_30_142758) do
     t.index ["cat_id"], name: "index_adopter_cats_on_cat_id"
   end
 
-  create_table "table_admins", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
-  end
-
-  create_table "table_adopters", force: :cascade do |t|
+  create_table "adopters", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2018_05_30_142758) do
     t.integer "num_of_cats"
   end
 
-  create_table "table_cats", force: :cascade do |t|
+  create_table "cats", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"

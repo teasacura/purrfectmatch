@@ -1,6 +1,6 @@
 class CreateTableAdopters < ActiveRecord::Migration[5.2]
   def change
-    create_table :table_adopters do |t|
+    create_table :adopters do |t|
       t.string :name
       t.string :email
       t.string :password_digest
