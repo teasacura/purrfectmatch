@@ -1,3 +1,4 @@
-class Adopter < User
-  attr_accessor :age_pref, :breed_pref, :temperament_pref, :num_of_cats
+class Adopter < ApplicationRecord
+  has_many :adopter_cats
+  has_many :cats, through: :adopter_cats
 end
