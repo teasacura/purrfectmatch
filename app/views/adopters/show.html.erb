@@ -2,7 +2,16 @@
 Age: <p><%= @adopter.age %></p>
 <p><%= image_tag(@adopter.image_url) %></p>
 
-
+<h1>Pets</h1>
+<% if @adopter.cats.empty? %>
+  <%= "I don't have cats" %>
+<% else %>
+<ul>
+  <% @adopter.cats.each do |cat| %>
+    <li><%= link_to cat.name, cat_path(cat) %></li>
+  <% end %>
+</ul>
+<% end %>
 
 <br>
 <%= link_to "Edit Profile", edit_adopter_path(@adopter) %>
